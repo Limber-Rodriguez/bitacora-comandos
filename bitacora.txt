@@ -1,0 +1,273 @@
+********************************************
+Administración inicial de Linux - Unhatched
+********************************************
+------------------------------------------------------------------------------------------------------------------------------------
+cp >>  Comando nos permite copiar
+	-v permite que el sistema te diga lo que se esta haciendo 
+	   muestra el origen y el destino al ejecutar el comando cp
+	-p preserva los atributos del archivo
+	-R para copiar todos los archivos en un directorio.
+------------------------------------------------------------------------------------------------------------------------------------
+ls >>  proporciona los nombres de los archivos y directorios dentro del directorio especificado (o actual)
+	-a Visualiza todos los archivos, incluyendo los archivos ocultos
+	-l proporciona mas informacion acerca de un archivo
+------------------------------------------------------------------------------------------------------------------------------------
+grep >> El comando grep para filtrar las líneas en un archivo o en la salida de otro comando basado en la coincidencia de un patrón.
+------------------------------------------------------------------------------------------------------------------------------------
+cat >>	Este comando se usa para crear un fichero y para la visualización del contenido dentro del fichero
+	cat>bin (crea un fichero)
+	cat bin (ve el contenido del fichero)
+	cat "Hello world">>bin (sobreescribe el fichero)
+------------------------------------------------------------------------------------------------------------------------------------
+whoami >> visualiza el nombre del usuario actual 
+------------------------------------------------------------------------------------------------------------------------------------
+less >> Se utiliza para visualizar el contenido de archivos de texto de manera paginada, lo que significa que puedes ver el 
+	contenido de un archivo una pantalla a la vez.
+------------------------------------------------------------------------------------------------------------------------------------
+groups >> Devuelve los archivos que son propietarios de un grupo  específico
+------------------------------------------------------------------------------------------------------------------------------------
+chmod >>  Este comando se usa para cambiar permisos de un directorio o un fichero
+------------------------------------------------------------------------------------------------------------------------------------
+chown >> es utilizado en sistemas operativos basados en Unix, como Linux, para cambiar el propietario y/o el grupo de un archivo o directorio
+	chown [opciones] nuevo_propietario[:nuevo_grupo] archivo_o_directorio
+------------------------------------------------------------------------------------------------------------------------------------
+hostname >>  se utiliza para obtener las direcciones IP asociadas al host en el que se está ejecutando
+	-I significa all ip addresses muestra las derecciones IP asociadas al host incluyendo IPv4 y IPv6
+------------------------------------------------------------------------------------------------------------------------------------
+ping >> permite comprobar la conectividad entre dos nodos de una red mediante el envío de paquetes de solicitud de eco ICMP
+
+	ping [opciones] destino
+
+------------------------------------------------------------------------------------------------------------------------------------
+**************************************
+Linux #1 Essentials - Comando básicos
+**************************************
+------------------------------------------------------------------------------------------------------------------------------------
+history >>  historial de comandos ejecutados
+	-c borra el historial de comandos de la sesion actual
+	 5 historial de los 5 ultimos comando ejecutados
+------------------------------------------------------------------------------------------------------------------------------------
+pwd >> visualiza la ubicacion actual 
+------------------------------------------------------------------------------------------------------------------------------------
+touch >> crea un archivo vacio 
+------------------------------------------------------------------------------------------------------------------------------------
+ps >> Este comando es para ver los procesos. De forma predeterminada, el comando ps sólo mostrará los procesos 
+      ejecutados en el shell actual.
+	-a  Muestra información sobre todos los procesos, no solo los asociados con la terminal del usuario actual.
+	-u  Muestra información detallada sobre el usuario propietario del proceso
+	-x  Muestra también procesos que no están asociados con ninguna terminal
+------------------------------------------------------------------------------------------------------------------------------------
+apt >> herramienta de gestio de paquetes
+------------------------------------------------------------------------------------------------------------------------------------
+speedtest-cli >>  es una herramienta de línea de comandos que permite medir la velocidad de la conexión a Internet desde la terminal
+	sudo apt install speedtest-cli : para instalar la herramienta
+------------------------------------------------------------------------------------------------------------------------------------
+***************************************
+Hosting web en Apache Web Server - VPS
+***************************************
+------------------------------------------------------------------------------------------------------------------------------------
+update >> Este comando actualiza la información sobre los paquetes disponibles en los repositorios configurados en el sistema
+------------------------------------------------------------------------------------------------------------------------------------
+upgrade >> Este comando instala las versiones más recientes de los paquetes instalados en el sistema. Es importante 
+	   ejecutar apt update antes de apt upgrade para asegurarse de tener la información de paquetes más reciente.
+------------------------------------------------------------------------------------------------------------------------------------
+ssh >> es un protocolo de red que permite la ejecución de comandos de forma segura en un servidor remoto
+	sudo apt install openssh-server : para la instalacion en linux
+	ssh usuario@192.168.1.1
+
+------------------------------------------------------------------------------------------------------------------------------------
+apche2 >> es un servidor web de código abierto y uno de los servidores web
+	sudo apt-get install apache2 => para la instalacion en sistemas basados en debian
+	sudo systemctl start apache2 => para iniciar apache
+	sudo systemctl stop apache2 => para detener apache
+	sudo systemctl restart apache2 => para reiniciar apache
+	sudo systemctl reload apache2 => para recargar la configuracion
+
+------------------------------------------------------------------------------------------------------------------------------------
+vsftpd >> es un servidor FTP de código abierto y ligero diseñado para ser seguro y eficiente. Se utiliza para 
+	  permitir la transferencia de archivos entre un servidor y clientes a través del protocolo FTP.
+	
+	sudo apt-get install vsftpd => instala el servidor
+	sudo systemctl start vsftpd => inicia el servicio
+	sudo systemctl stop vsftpd => detiene el servicio
+
+------------------------------------------------------------------------------------------------------------------------------------
+ss >>	es una herramienta de línea de comandos utilizada para mostrar información detallada sobre los sockets de red en 
+	sistemas operativos basados en Unix, como Linux
+	-t => Mostrar todas las conexiones TCP
+	-u => Mostrar todas las conexiones UDP
+	-l => Mostrar todos los sockets en estado de escucha
+	-n => Muestra números de puerto en lugar de nombres de servicios
+------------------------------------------------------------------------------------------------------------------------------------
+systemctl >>  es una herramienta de gestión de servicios en sistemas operativos basados en systemd. Systemd es un sistema de 
+	      inicialización y administración de sistemas 
+
+		sudo systemctl start nombre_del_servicio => inicia un servicio
+		systemctl status nombre_del_servicio => verifica el estado de un servicio
+		
+------------------------------------------------------------------------------------------------------------------------------------
+mkdir >> crea un directorio 
+------------------------------------------------------------------------------------------------------------------------------------
+scp >> es un comando utilizado en sistemas basados en Unix para copiar archivos y directorios de manera segura entre 
+       hosts a través de una conexión SSH.
+
+	scp archivo.txt usuario@servidor:/ruta/destino/
+
+------------------------------------------------------------------------------------------------------------------------------------
+*********************
+ Linux #2 "SysAdmin"
+*********************
+------------------------------------------------------------------------------------------------------------------------------------
+HISTSIZE para determinar las líneas que se visualizaran en memoria
+------------------------------------------------------------------------------------------------------------------------------------
+HISTFILESIZE para determinar el número de comandos que se
+almacenaran en el archivo, el comando
+------------------------------------------------------------------------------------------------------------------------------------
+HISTCONTROL para determinar que no se repitan comandos en el
+historial
+------------------------------------------------------------------------------------------------------------------------------------
+HISTIGNORE para que no se almacenen comandos de uso
+frecuente.
+------------------------------------------------------------------------------------------------------------------------------------
+HISTTIMEFORMAT nos sirve para hacer que el historial de
+comandos muestre la hora y el día en que se ejecutaron
+------------------------------------------------------------------------------------------------------------------------------------
+man >>  es una herramienta que se utiliza para acceder a las páginas de manual de los comandos
+	man nombre_del_comando
+
+------------------------------------------------------------------------------------------------------------------------------------
+mv >>  Mover o Renombrar
+
+	mv archivo origen destino
+
+------------------------------------------------------------------------------------------------------------------------------------
+cp >> copiar
+
+	cp archivo origen destino
+
+------------------------------------------------------------------------------------------------------------------------------------
+source >> se utiliza para ejecutar comandos desde un archivo en el contexto actual del shell, en lugar de crear un nuevo proceso.
+
+	source archivo
+
+------------------------------------------------------------------------------------------------------------------------------------
+which >> se utiliza en sistemas operativos basados en Unix, como Linux, para mostrar la ubicación de un 
+	 ejecutable en el sistema de archivos
+
+	which nombre_del_comando
+
+------------------------------------------------------------------------------------------------------------------------------------
+echo >> lo que hará es imprimir cualquier argumento que le pases en la salida estándar
+	echo "Hola, mundo!"
+
+------------------------------------------------------------------------------------------------------------------------------------
+ps >> se utiliza en sistemas basados en Unix, como Linux, para mostrar información sobre los procesos en ejecución
+	ps => Esta combinación de opciones proporciona una lista detallada de todos los procesos en el sistema.
+	
+------------------------------------------------------------------------------------------------------------------------------------
+kill >> se utiliza en sistemas operativos basados en Unix, como Linux, para enviar señales a procesos en ejecución
+	kill PID
+------------------------------------------------------------------------------------------------------------------------------------
+jobs >> se utiliza como Linux, para mostrar los procesos que están en segundo plano en la sesión actual de la terminal.
+------------------------------------------------------------------------------------------------------------------------------------
+groupadd >> Este comando permite la creación de grupos para organizar y gestionar usuarios de manera más efectiva
+	sudo groupadd nombre_del_grupo
+
+------------------------------------------------------------------------------------------------------------------------------------
+useradd >> Este comando permite la creación de cuentas de usuario, y es generalmente utilizado con 
+	   privilegios de superusuario (a menudo utilizando sudo) ya que la creación de usuarios afecta la configuración del sistema.
+	
+	sudo useradd nombre_de_usuario
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+********************************
+DHCP empresarial en Linux - VPS
+********************************
+------------------------------------------------------------------------------------------------------------------------------------
+configuracion DHCP
+	sudo apt install isc-dhcp-server
+	se crea un pool para una sub red por ejemplo 172.28.135.64/26
+		subnet 172.28.135.64 netmask 255.255.255.192 {
+  			range 172.28.135.68 172.28.135.71;
+  			option domain-name-servers 172.28.135.65;
+  			option domain-name "lrodriguez.edu.bo";
+  			option routers 172.28.135.65;
+  			option broadcast-address 172.28.135.127;
+  			default-lease-time 600;
+  			max-lease-time 43200;
+		}
+	se define la interfaz del servidor IPv4 en el archivo /etc/default/isc-dhcp-server
+		INTERFACESv4="interfaz de red"
+	se le asigna una ip estatica 
+		/etc/netplan/000.yaml => en ubuntu
+		/etc/network/interfaces => en debian
+	
+------------------------------------------------------------------------------------------------------------------------------------
+ipconfig /release >> es específico del sistema operativo Windows y se utiliza en la línea de comandos (cmd) para liberar la 
+		     dirección IP asignada a una interfaz de red. 
+------------------------------------------------------------------------------------------------------------------------------------
+ipconfig /renew  >>  es específico del sistema operativo Windows. Este comando se utiliza en la línea de comandos (cmd) 
+		     para renovar la dirección IP asignada a una interfaz de red mediante el Protocolo DHCP
+------------------------------------------------------------------------------------------------------------------------------------
+nmap >> es una herramienta de código abierto utilizada para exploración de red y auditoría de seguridad
+	nmap [opciones] [objetivos]
+------------------------------------------------------------------------------------------------------------------------------------
+
+*******************
+Linux "SysAdminV2"
+*******************
+------------------------------------------------------------------------------------------------------------------------------------
+ip route show >> utiliza para mostrar la tabla de enrutamiento en sistemas operativos basados en Linux, como Ubuntu. Esta tabla de 
+		enrutamiento determina cómo los paquetes de red se dirigen a través de la red.
+------------------------------------------------------------------------------------------------------------------------------------
+netstat >> se utiliza para mostrar una lista de puertos abiertos y los servicios que están escuchando en un sistema
+	-t => Mostrar todas las conexiones TCP
+	-u => Mostrar todas las conexiones UDP
+	-l => Mostrar todos los sockets en estado de escucha
+	-n => Muestra números de puerto en lugar de nombres de servicios
+------------------------------------------------------------------------------------------------------------------------------------
+last >> muestra una lista de los últimos inicios y cierres de sesión en el sistema. 
+------------------------------------------------------------------------------------------------------------------------------------
+tail >> se utiliza para mostrar las últimas líneas de uno o varios archivos de texto en la línea de comandos
+	tail [opciones] nombre_del_archivo
+	tail -n 10 archivo.log
+
+------------------------------------------------------------------------------------------------------------------------------------
+awk  >> Sirve para realizar operaciones avanzadas en archivos de texto, como filtrar y procesar datos, realizar cálculos, y formatear la salida.
+	awk 'patrón { acción }' archivo
+	awk '{print $2}' archivo.txt
+
+------------------------------------------------------------------------------------------------------------------------------------
+sort >> se utiliza para ordenar líneas de texto en archivos o desde la entrada estándar
+	sort [opciones] archivo
+	-r: Ordena en orden descendente (de mayor a menor).
+	-n: Ordena numéricamente en lugar de alfabéticamente.
+	-k N: Especifica la columna por la cual ordenar (por ejemplo, -k 2 ordenará por la 
+------------------------------------------------------------------------------------------------------------------------------------
+cut >> se utiliza para extraer secciones específicas de cada línea de un archivo de texto o de la entrada estándar.
+	cut [opciones] archivo
+	cut -f 1 archivo.txt
+
+------------------------------------------------------------------------------------------------------------------------------------
+tar >> se utiliza para crear, manipular o extraer archivos y directorios que han sido archivados en un solo archivo.
+	tar opciones archivo_o_directorio
+
+------------------------------------------------------------------------------------------------------------------------------------
+gzip >> se utiliza para comprimir archivos. Se puede utilizar junto con el comando tar para crear archivos tar 
+	comprimidos o de forma independiente para comprimir archivos individuales
+
+	gzip opciones archivo
+
+------------------------------------------------------------------------------------------------------------------------------------
+PATH >> es una variable de entorno que especifica una lista de directorios donde el sistema busca ejecutables de programas
+	echo $PATH => se ve el valor de PATH
+
+------------------------------------------------------------------------------------------------------------------------------------
+dig >> es una herramienta de línea de comandos que se utiliza para realizar consultas DNS
+	 dig ejemplo.com
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+*****************
